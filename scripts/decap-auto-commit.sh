@@ -9,25 +9,28 @@ cd "$REPO_DIR"
 echo "Decap auto-commit watcher started (PID: $$)"
 echo "Watching for changes in $REPO_DIR"
 
-is_publish_event() {
-  # In proxy backend mode, Decap typically writes directly to content files.
-  # Treat staged markdown content changes (excluding admin/scripts/_site) as publish events.
-  while IFS= read -r path; do
-    case "$path" in
-      _site/*|admin/*|scripts/*|.github/*|docker-compose.yml|start-local.sh|Gemfile|Gemfile.lock|.DS_Store)
-        continue
-        ;;
-      *.md)
-        return 0
-        ;;
-      *)
-        continue
-        ;;
-    esac
-  done < <(git diff --cached --name-only)
+configure_push_auth() {
+  if [[ -z "${GITHUB_TOKEN:-}" ]]; then
+    echo "GITHUB_TOKEN is not set; push may fail in non-interactive container auth."
+    return
+  fi
 
-  return 1
+  local fetch_url push_url
+  fetch_url="$(git remote get-url origin 2>/dev/null || true)"
+
+  case "$fetch_url" in
+    https://github.com/*)
+      push_url="${fetch_url/https:\/\/github.com\//https:\/\/x-access-token:${GITHUB_TOKEN}@github.com\/}"
+      git remote set-url --push origin "$push_url"
+      echo "Configured token-based push URL for origin."
+      ;;
+    *)
+      echo "Origin is not https://github.com/*; skipping token push URL setup."
+      ;;
+  esac
 }
+
+configure_push_auth
 
 while true; do
   if git status --short | grep -q .; then
@@ -41,20 +44,14 @@ while true; do
       continue
     fi
 
-    if ! is_publish_event; then
-      echo "[$timestamp] Changes detected but no publish marker; skipping commit."
-      sleep 3
-      continue
-    fi
-
-    commit_message="Publish via Decap CMS: $timestamp"
+    commit_message="Auto-commit via Decap CMS: $timestamp"
 
     if git commit -m "$commit_message" --no-verify; then
       echo "[$timestamp] $commit_message on branch '$current_branch'"
       if git push origin "$current_branch"; then
         echo "[$timestamp] Pushed to origin/$current_branch"
       else
-        echo "[$timestamp] Push failed for origin/$current_branch"
+        echo "[$timestamp] Push failed for origin/$current_branch (set GITHUB_TOKEN for container auth)"
       fi
     fi
   fi

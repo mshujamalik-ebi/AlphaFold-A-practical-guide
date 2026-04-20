@@ -44,6 +44,7 @@ services:
       GIT_AUTHOR_EMAIL: cms@alphafold.local
       GIT_COMMITTER_NAME: Decap CMS
       GIT_COMMITTER_EMAIL: cms@alphafold.local
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
     command: >
       bash -lc "
         apt-get update &&

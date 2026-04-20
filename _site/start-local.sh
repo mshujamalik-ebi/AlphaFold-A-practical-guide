@@ -16,6 +16,14 @@ if ! docker compose version >/dev/null 2>&1; then
   exit 1
 fi
 
+if [[ -z "${GITHUB_TOKEN:-}" ]] && command -v gh >/dev/null 2>&1; then
+  token_from_gh="$(gh auth token 2>/dev/null || true)"
+  if [[ -n "$token_from_gh" ]]; then
+    export GITHUB_TOKEN="$token_from_gh"
+    echo "Loaded GITHUB_TOKEN from gh auth for container push access."
+  fi
+fi
+
 echo "Starting Jekyll, Decap CMS proxy, and auto-commit services..."
 docker compose up -d --build
 
