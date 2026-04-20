@@ -1,6 +1,6 @@
 ---
+title: What are proteins and how do we know their structure?
 layout: default
-title: What are proteins and how do we know their structures?
 ---
 
 # What are proteins and how do we know their structures?

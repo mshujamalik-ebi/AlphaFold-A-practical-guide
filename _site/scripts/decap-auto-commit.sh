@@ -10,11 +10,23 @@ echo "Decap auto-commit watcher started (PID: $$)"
 echo "Watching for changes in $REPO_DIR"
 
 is_publish_event() {
-  local changed_paths
-  changed_paths="$(git diff --cached --name-only)"
+  # In proxy backend mode, Decap typically writes directly to content files.
+  # Treat staged markdown content changes (excluding admin/scripts/_site) as publish events.
+  while IFS= read -r path; do
+    case "$path" in
+      _site/*|admin/*|scripts/*|.github/*|docker-compose.yml|start-local.sh|Gemfile|Gemfile.lock|.DS_Store)
+        continue
+        ;;
+      *.md)
+        return 0
+        ;;
+      *)
+        continue
+        ;;
+    esac
+  done < <(git diff --cached --name-only)
 
-  # Commit/push only when staged changes indicate a publish workflow event.
-  echo "$changed_paths" | grep -Eiq '(^|/)(publish|published|workflow|_draft)(/|$)'
+  return 1
 }
 
 while true; do
@@ -39,7 +51,11 @@ while true; do
 
     if git commit -m "$commit_message" --no-verify; then
       echo "[$timestamp] $commit_message on branch '$current_branch'"
-      git push origin "$current_branch" 2>/dev/null || true
+      if git push origin "$current_branch"; then
+        echo "[$timestamp] Pushed to origin/$current_branch"
+      else
+        echo "[$timestamp] Push failed for origin/$current_branch"
+      fi
     fi
   fi
 
