@@ -30,12 +30,41 @@ configure_push_auth() {
   esac
 }
 
+is_protected_branch() {
+  local branch="$1"
+  local protected
+  local protected_branches="${PROTECTED_BRANCHES:-main master}"
+
+  for protected in $protected_branches; do
+    if [[ "$branch" == "$protected" ]]; then
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+switch_to_writable_branch_if_needed() {
+  if ! is_protected_branch "$current_branch"; then
+    return
+  fi
+
+  local new_branch
+  new_branch="decap-cms/${current_branch}/$(date '+%Y%m%d-%H%M%S')"
+
+  git checkout -b "$new_branch"
+  echo "[$timestamp] '$current_branch' is protected. Switched to '$new_branch' for commit."
+  current_branch="$new_branch"
+}
+
 configure_push_auth
 
 while true; do
   if git status --short | grep -q .; then
     timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
     current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+    switch_to_writable_branch_if_needed
 
     git add -A
 
