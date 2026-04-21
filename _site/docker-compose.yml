@@ -39,8 +39,6 @@ services:
     volumes:
       - .:/workspace
       - git_cache:/root/.git
-      - ${SSH_PRIVATE_KEY_PATH:-/dev/null}:/root/.ssh/id_ed25519:ro
-      - ${SSH_KNOWN_HOSTS_PATH:-/dev/null}:/root/.ssh/known_hosts:ro
     environment:
       GIT_AUTHOR_NAME: Decap CMS
       GIT_AUTHOR_EMAIL: cms@alphafold.local
@@ -48,11 +46,10 @@ services:
       GIT_COMMITTER_EMAIL: cms@alphafold.local
       GITHUB_TOKEN: ${GITHUB_TOKEN:-}
       PROTECTED_BRANCHES: ${PROTECTED_BRANCHES:-main master}
-      USE_SSH_AUTH: ${USE_SSH_AUTH:-true}
     command: >
       bash -lc "
         apt-get update &&
-        apt-get install -y git curl openssh-client &&
+        apt-get install -y git curl &&
         chmod +x ./scripts/decap-auto-commit.sh &&
         ./scripts/decap-auto-commit.sh
       "
