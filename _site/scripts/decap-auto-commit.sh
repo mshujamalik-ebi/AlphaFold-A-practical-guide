@@ -10,13 +10,37 @@ echo "Decap auto-commit watcher started (PID: $$)"
 echo "Watching for changes in $REPO_DIR"
 
 configure_push_auth() {
-  if [[ -z "${GITHUB_TOKEN:-}" ]]; then
-    echo "GITHUB_TOKEN is not set; push may fail in non-interactive container auth."
-    return
-  fi
-
   local fetch_url push_url
   fetch_url="$(git remote get-url origin 2>/dev/null || true)"
+
+  if [[ "${USE_SSH_AUTH:-true}" == "true" ]] && [[ -f "/root/.ssh/id_ed25519" ]]; then
+    chmod 700 /root/.ssh 2>/dev/null || true
+    chmod 600 /root/.ssh/id_ed25519 2>/dev/null || true
+    chmod 644 /root/.ssh/known_hosts 2>/dev/null || true
+
+    git config core.sshCommand "ssh -i /root/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+
+    case "$fetch_url" in
+      https://github.com/*)
+        push_url="${fetch_url/https:\/\/github.com\//git@github.com:}"
+        git remote set-url --push origin "$push_url"
+        echo "Configured SSH push URL for origin."
+        return
+        ;;
+      git@github.com:*)
+        echo "Origin already configured for SSH pushes."
+        return
+        ;;
+      *)
+        echo "Origin is not a GitHub URL; skipping SSH push URL setup."
+        ;;
+    esac
+  fi
+
+  if [[ -z "${GITHUB_TOKEN:-}" ]]; then
+    echo "No SSH key mounted and GITHUB_TOKEN is not set; push may fail in non-interactive auth."
+    return
+  fi
 
   case "$fetch_url" in
     https://github.com/*)
