@@ -1,0 +1,105 @@
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: 010-an-introductory-guide
+    label: 010 - An Introductory Guide
+    folder: 010-an-introductory-guide-to-its-strengths-and-limitations
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 020-validation-and-impact
+    label: 020 - Validation and Impact
+    folder: 020-validation-and-impact
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 030-inputs-and-outputs
+    label: 030 - Inputs and Outputs
+    folder: 030-inputs-and-outputs
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 040-accessing-and-predicting
+    label: 040 - Accessing and Predicting
+    folder: 040-accessing-and-predicting-protein-structures-with-alphafold
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 050-advanced-modeling
+    label: 050 - Advanced Modeling
+    folder: 050-advanced-modeling-and-applications-of-predicted-protein-structures
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 060-alphamissense
+    label: 060 - AlphaMissense
+    folder: 060-classifying-the-effects-of-missense-variants-using-alphamissense
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: 070-alphafold-3
+    label: 070 - AlphaFold 3 and Server
+    folder: 070-alphafold-3-and-alphafold-server
+    create: true
+    extension: md
+    format: frontmatter
+    nested:
+      depth: 5
+      summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Layout, name: layout, widget: hidden, default: default }
+      - { label: Body, name: body, widget: markdown }

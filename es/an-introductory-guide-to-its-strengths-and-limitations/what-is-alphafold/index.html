@@ -1,0 +1,829 @@
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  
+  <title>AlphaFold: Una guía práctica | EMBL-EBI Training</title>
+	<link rel="stylesheet" href="https://assets.emblstatic.net/vf/v2.5.25/css/styles.css" type="text/css">
+
+	<link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css"
+		media="all" />
+	<style>
+	#ebi-hero-background {
+		background-image: url('https://acxngcvroo.cloudimg.io/v7/www.embl.org/files/wp-content/uploads/Online-tutorial.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	</style>
+</head>
+<body class="vf-body">
+	<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+		<span data-protection-message-disable="true"></span>
+		<header id="masthead-black-bar" class="clearfix masthead-black-bar | ebi-header-footer vf-content vf-u-fullbleed">
+		</header>
+		<div class="layout-container">
+			<main class="page-content clearfix" role="main">
+				<div class="visually-hidden">
+					<a id="main-content" tabindex="-1">
+					</a>
+				</div>
+
+        <nav>
+          <a href="/AlphaFold-A-practical-guide/en/">English</a> |
+          <a href="/AlphaFold-A-practical-guide/es/">Español</a> |
+          <a href="/AlphaFold-A-practical-guide/pt/">Portuguese</a>
+        </nav>
+				<div class="vf-content">
+					<div>
+						<div id="block-ebi-academy-content--89">
+							<div id="ebi-hero-background" style="">
+								<div class="vf-body">
+									<section class="vf-hero | vf-u-fullbleed" style="background:none;">
+										<div class="vf-hero__content | vf-box | vf-stack vf-stack--400" style="min-width:350px">
+											<p class="vf-hero__kicker" style="text-transform:uppercase">Tutorial en línea</p>
+											<h2 id="course_title" class="vf-hero__heading">AlphaFold: Una guía práctica</h2>
+											<p class="vf-hero__subheading">Una guía práctica</p>
+										</div>
+									</section>
+								</div>
+							</div>
+							<article data-history-node-id="2555" role="article">
+								<div data-history-node-id="2555" role="article">
+									<div class="vf-body published">
+										<div class="vf-u-margin__top--500"></div>
+										<section class="embl-grid">
+											<div class="embl-training__sidebar">
+												<div class="vf-u-margin__top--500"></div>
+												<figure class="vf-figure ebi-academy-book-cover-image">
+
+													<img class="vf-figure__image"
+														src="//trainingcontent.embl.org/sites/default/files/book-images/AlphaFold.png" alt="">
+
+												</figure>
+												<div class="vf-u-margin__top--500"></div>
+												<p class="vf-u-type__text-body--3 vf-u-margin--0">
+													Tiempo para completar: </p>
+												<p class="vf-u-type__text-body--3 vf-u-margin--0">2-3 horas</p>
+												</p>
+												<hr class="vf-divider vf-u-margin__bottom-md">
+												<p class="vf-u-type__text-body--3 vf-u-margin--0 vf-u-margin__bottom--xs">
+													Escrito por:</p>
+												<div class="vf-u-margin__top--100"></div>
+												<ul class="vf-list vf-list--compact vf-u-margin__bottom-md">
+                            
+                            
+
+                            
+                              <li class="vf-list__item">
+                                
+                                  <a class="vf-link vf-link--primary vf-u-type__text-body--3" href="https://example.com/some-author">
+                                    Some Author
+                                  </a>
+                                
+                              </li>
+                            
+                              <li class="vf-list__item">
+                                
+                                  John Doe
+                                
+                              </li>
+                            
+                          </ul>
+												<p class="vf-u-type__text-body--3 vf-u-margin--0 vf-u-margin__bottom--xs">
+													Traducido por:</p>
+												<div class="vf-u-margin__top--100"></div>
+												<ul class="vf-list vf-list--compact vf-u-margin__bottom-md">
+													
+                            
+
+                            
+                              <li class="vf-list__item">
+                                
+                                  Translator 1
+                                
+                              </li>
+                            
+                              <li class="vf-list__item">
+                                
+                                  Translator 2
+                                
+                              </li>
+                            
+												</ul>
+												<p class="vf-u-type__text-body--3 vf-u-margin--0 vf-u-margin__bottom-md">
+													Traducido en: Octubre de 2025</p>
+												</p>
+												<p class="vf-u-type__text-body--3 vf-u-margin--0 vf-u-margin__bottom-md">
+													Última actualización: Junio ​​de 2025</p>
+												</p>
+												<div class="vf-u-margin__top--500"></div>
+												<hr class="vf-divider vf-u-margin__bottom-md">
+												<!-- Navigation -->
+                       
+                      
+
+                        <ul class="vf-tree__list vf-tree__list--1 | vf-list" aria-role="tree">
+
+                          <!-- Course overview -->
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/">
+                              AlphaFold: Una guía práctica
+                            </a>
+                          </li>
+                        <!--  -->
+                        
+                        
+
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/.github/workflows/pull_request_template/">
+                             Pull_request_template
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/">
+                             An Introductory Guide To Its Strengths And Limitations
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/what-are-proteins-and-how-do-we-know-their-structures/">
+                                      What Are Proteins And How Do We Know Their Structures
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/what-is-the-protein-folding-problem/">
+                                      What Is The Protein Folding Problem
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/what-is-alphafold/">
+                                      What Is Alphafold
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/strengths-and-limitations-of-alphafold/">
+                                      Strengths And Limitations Of Alphafold
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/test-your-knowledge/">
+                                      Test Your Knowledge
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/an-introductory-guide-to-its-strengths-and-limitations/">
+                             An Introductory Guide To Its Strengths And Limitations
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Una-guía-introductoria-sobre-las-fortalezas-y-limitaciones-de-AlphaFold/">
+                             Una GuíA Introductoria Sobre Las Fortalezas Y Limitaciones De AlphaFold
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Una-guía-introductoria-sobre-las-fortalezas-y-limitaciones-de-AlphaFold/Que-son-las-proteínas-y-como-conocemos-sus-estructuras/">
+                                      Que Son Las ProteíNas Y Como Conocemos Sus Estructuras
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Una-guía-introductoria-sobre-las-fortalezas-y-limitaciones-de-AlphaFold/Qué-es-el-problema-del-plegamiento-de-proteínas/">
+                                      Qué Es El Problema Del Plegamiento De ProteíNas
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Una-guía-introductoria-sobre-las-fortalezas-y-limitaciones-de-AlphaFold/Que-es-Alphafold/">
+                                      Que Es Alphafold
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Una-guía-introductoria-sobre-las-fortalezas-y-limitaciones-de-AlphaFold/Fortalezas y limitaciones de AlphaFold-2/">
+                                      Fortalezas Y Limitaciones De AlphaFold 2
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Validacion-e-impacto/">
+                             Validacion E Impacto
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Validacion-e-impacto/Como-se-han-validado-las-predicciones-de-la-estructura-de-las-proteínas-de-AlphaFold-2/">
+                                      Como Se Han Validado Las Predicciones De La Estructura De Las ProteíNas De AlphaFold 2
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/Validacion-e-impacto/prueba/">
+                                      Prueba
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/validation-and-impact/">
+                             Validation And Impact
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/validation-and-impact/how-have-alphafolds-predictions-of-protein-structure-been-validated/">
+                                      How Have Alphafolds Predictions Of Protein Structure Been Validated
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/validation-and-impact/how-accurate-are-alphafold-structure-predictions/">
+                                      How Accurate Are Alphafold Structure Predictions
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/validation-and-impact/how-is-alphafold-used-by-scientists/">
+                                      How Is Alphafold Used By Scientists
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/">
+                             Inputs And Outputs
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/a-high-level-overview/">
+                                      A High Level Overview
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/">
+                                      Evaluating Alphafolds Predicted Structures Using Confidence Scores
+                                    </a>
+
+                                    
+                                      <ul class="vf-tree__list vf-tree__list--3 | vf-list" style="margin-left: 16px">
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/plddt-understanding-local-confidence/">
+                                              Plddt Understanding Local Confidence
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/pae-a-measure-of-global-confidence-in-alphafold-predictions/">
+                                              Pae A Measure Of Global Confidence In Alphafold Predictions
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/confidence-scores-in-alphafold-multimer/">
+                                              Confidence Scores In Alphafold Multimer
+                                            </a>
+                                          </li>
+                                        
+                                      </ul>
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/alphafold-inputs-and-outputs-recap/">
+                                      Alphafold Inputs And Outputs Recap
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/inputs-and-outputs/other-tools-to-check-quality-of-the-predicted-structures/">
+                                      Other Tools To Check Quality Of The Predicted Structures
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/">
+                             Accessing And Predicting Protein Structures With Alphafold
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/choosing-how-to-access-alphafold/">
+                                      Choosing How To Access Alphafold
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/accessing-predicted-protein-structures-in-the-alphafold-database/">
+                                      Accessing Predicted Protein Structures In The Alphafold Database
+                                    </a>
+
+                                    
+                                      <ul class="vf-tree__list vf-tree__list--3 | vf-list" style="margin-left: 16px">
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/accessing-predicted-protein-structures-in-the-alphafold-database/whats-the-best-way-to-access-the-database/">
+                                              Whats The Best Way To Access The Database
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/accessing-predicted-protein-structures-in-the-alphafold-database/using-the-alphafold-database-for-analysis/">
+                                              Using The Alphafold Database For Analysis
+                                            </a>
+                                          </li>
+                                        
+                                      </ul>
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/predicting-protein-structures-with-colabfold-and-alphafold-colab/">
+                                      Predicting Protein Structures With Colabfold And Alphafold Colab
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/predicting-protein-structures-using-the-alphafold-open-source-code/">
+                                      Predicting Protein Structures Using The Alphafold Open Source Code
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/other-ways-to-access-predicted-protein-structures/">
+                                      Other Ways To Access Predicted Protein Structures
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/accessing-and-predicting-protein-structures-with-alphafold/how-to-cite-alphafold/">
+                                      How To Cite Alphafold
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/advanced-modeling-and-applications-of-predicted-protein-structures/">
+                             Advanced Modeling And Applications Of Predicted Protein Structures
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/advanced-modeling-and-applications-of-predicted-protein-structures/customising-alphafold-structure-predictions/">
+                                      Customising Alphafold Structure Predictions
+                                    </a>
+
+                                    
+                                      <ul class="vf-tree__list vf-tree__list--3 | vf-list" style="margin-left: 16px">
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/advanced-modeling-and-applications-of-predicted-protein-structures/customising-alphafold-structure-predictions/outputs-from-colabfold/">
+                                              Outputs From Colabfold
+                                            </a>
+                                          </li>
+                                        
+                                      </ul>
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/advanced-modeling-and-applications-of-predicted-protein-structures/using-alphafold-predicted-structures-to-tackle-deeper-questions/">
+                                      Using Alphafold Predicted Structures To Tackle Deeper Questions
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/advanced-modeling-and-applications-of-predicted-protein-structures/enhancements-to-alphafold-from-the-wider-scientific-community/">
+                                      Enhancements To Alphafold From The Wider Scientific Community
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/classifying-the-effects-of-missense-variants-using-alphamissense/">
+                             Classifying The Effects Of Missense Variants Using Alphamissense
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/classifying-the-effects-of-missense-variants-using-alphamissense/introducing-missense-variants-and-alphamissense/">
+                                      Introducing Missense Variants And Alphamissense
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/classifying-the-effects-of-missense-variants-using-alphamissense/understanding-pathogenicity-scores-from-alphamissense/">
+                                      Understanding Pathogenicity Scores From Alphamissense
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/classifying-the-effects-of-missense-variants-using-alphamissense/alphamissense-in-the-alphafold-database/">
+                                      Alphamissense In The Alphafold Database
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/">
+                             Alphafold 3 And Alphafold Server
+                            </a>
+
+                            
+                              <ul class="vf-tree__list vf-tree__list--2 | vf-list" style="margin-left: 16px">
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/introducing-alphafold-3/">
+                                      Introducing Alphafold 3
+                                    </a>
+
+                                    
+                                      <ul class="vf-tree__list vf-tree__list--3 | vf-list" style="margin-left: 16px">
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/introducing-alphafold-3/how-does-alphafold-3-work/">
+                                              How Does Alphafold 3 Work
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/introducing-alphafold-3/what-alphafold-3-struggles-with/">
+                                              What Alphafold 3 Struggles With
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/introducing-alphafold-3/should-i-use-alphafold-2-or-alphafold-3/">
+                                              Should I Use Alphafold 2 Or Alphafold 3
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/introducing-alphafold-3/how-have-alphafold-3s-predictions-been-validated/">
+                                              How Have Alphafold 3s Predictions Been Validated
+                                            </a>
+                                          </li>
+                                        
+                                      </ul>
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/alphafold-server-your-gateway-to-alphafold-3/">
+                                      Alphafold Server Your Gateway To Alphafold 3
+                                    </a>
+
+                                    
+                                      <ul class="vf-tree__list vf-tree__list--3 | vf-list" style="margin-left: 16px">
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/alphafold-server-your-gateway-to-alphafold-3/a-step-by-step-guide-to-generating-predictions-with-alphafold-server/">
+                                              A Step By Step Guide To Generating Predictions With Alphafold Server
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/alphafold-server-your-gateway-to-alphafold-3/advanced-features-of-alphafold-server/">
+                                              Advanced Features Of Alphafold Server
+                                            </a>
+                                          </li>
+                                        
+                                          <li class="vf-tree__item">
+                                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/alphafold-server-your-gateway-to-alphafold-3/interpreting-results-from-alphafold-server/">
+                                              Interpreting Results From Alphafold Server
+                                            </a>
+                                          </li>
+                                        
+                                      </ul>
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/03.how-to-assess-the-quality-of-alphafold-3-predictions/">
+                                      03.How To Assess The Quality Of Alphafold 3 Predictions
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                                  <li class="vf-tree__item">
+                                    <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/alphafold-3-and-alphafold-server/04.using-the-alphafold-3-source-code/">
+                                      04.Using The Alphafold 3 Source Code
+                                    </a>
+
+                                    
+
+                                  </li>
+                                
+                              </ul>
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/summary/">
+                             Summary
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/course-slides/">
+                             Course Slides
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/your-feedback/">
+                             Your Feedback
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/glossary-of-terms/">
+                             Glossary Of Terms
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/references/">
+                             References
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/second/">
+                             Second
+                            </a>
+
+                            
+
+                          </li>
+                        
+                          <li class="vf-tree__item">
+                            <a class="vf-tree__link" href="/AlphaFold-A-practical-guide/es/test/">
+                             Test
+                            </a>
+
+                            
+
+                          </li>
+                        
+                      </ul>
+		                  <hr class="vf-divider vf-u-margin__bottom-md">
+												<p>
+													<a href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons"
+															src="http://trainingcontent.embl.org/themes/custom/ebi_academy/images/CC_BY.png"
+															style="width: 125px; height: 44px;" width="125" height="44"></a>
+												</p>
+												<p class="vf-u-type__text-body--3">Todos los materiales son obras culturales gratuitas con licencia Creative Commons.
+													<a href="https://creativecommons.org/licenses/by/4.0/"
+														class="vf-link vf-link--primary  vf-u-margin--0" style="display:inline">Licencia Atribución 4.0 Internacional (CC BY 4.0), excepto cuando se proporcionen más detalles de la licencia </a>
+												</p>
+												<div class="vf-u-margin__top--500"></div>
+												<hr class="vf-divider vf-u-margin__bottom-md">
+
+												
+											</div>
+											<!-- Sidebar end -->
+											<div class="acc">
+												<div class="vf-u-margin__top--500"></div>
+												<h1 id="what-is-alphafold">What is AlphaFold?</h1>
+
+<p><strong>AlphaFold is Google DeepMind’s contribution to the long-standing problem of protein structure prediction. It predicts the 3D structures of proteins with a high degree of accuracy and is now widely used by researchers.</strong></p>
+
+<h2 id="what-alphafold-is"><strong>What AlphaFold is</strong></h2>
+
+<p>AlphaFold2 is a multicomponent artificial intelligence (AI) system that uses machine learning to predict a protein’s 3D structure based on its primary amino acid sequence.</p>
+
+<p>Machine learning is a way for an AI to learn the patterns in a huge dataset. Once the AI has been trained on existing data, it can predict the properties of new examples, using the patterns it has identified.</p>
+
+<p>AlphaFold2 is an example of an artificial neural network. It is a collection of simulated nodes, linked by connections that can be strengthened or weakened. Such networks can be adept at machine learning. Because AlphaFold’s network contains multiple layers of nodes, it is referred to as a “deep learning” algorithm. Please refer to the AlphaFold paper for the detailed description of the neural network architecture (<a href="https://doi.org/10.1038/s41586-021-03819-2">Jumper et al., 2021</a>) or even check exact implementation in the <a href="https://github.com/google-deepmind/alphafold">open source code</a>.</p>
+
+<p>AlphaFold is <strong>not</strong> a homology modelling tool: it can successfully operate without using any template structures and even predict previously unknown protein folds.</p>
+
+<h2 id="how-alphafold2-solves-the-structure-prediction-problem"><strong>How AlphaFold2 solves the structure prediction problem</strong></h2>
+
+<p>The training data for AlphaFold2 came from the <a href="https://www.wwpdb.org/">Protein Data Bank</a> (PDB): a free database containing all macromolecular structures that have ever been experimentally determined and publicly available . It currently has <a href="https://www.ebi.ac.uk/pdbe/">over 215,000 entries</a>. (<a href="https://www.ebi.ac.uk/training/online/courses/pdbe-searching-pdb/what-is-pdbe/">Learn more about the PDB</a>).</p>
+
+<p>Google DeepMind researchers used protein structures from the PDB, with their corresponding sequences, to train the AlphaFold2 neural network.</p>
+
+<p>AlphaFold2 takes the amino acid sequence of a novel protein and aligns it to the sequences of other similar proteins. This identifies sections of the sequence that tend to change together in evolutionary time, and thus are likely to be interacting and thus physically close in the protein’s 3D structure. Within a few minutes (or tens of minutes for larger proteins or complexes), AlphaFold2 presents a prediction of the 3D structure of the sequence. AlphaFold2 may or may not use known protein structure(s) as templates (for details, see sections “<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/validation-and-impact/">Validation and Impact</a>” and “<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/inputs-and-outputs/">Inputs and Outputs</a>“).</p>
+
+<p>Crucially, AlphaFold also provides confidence metrics, such as pLDDT, pTM and PAE. If it is not sure about some part of the structure, it will tell you this in the form of a confidence score, enabling critical interpretation (see <a href="https://www.ebi.ac.uk/training/online/courses/alphafold/inputs-and-outputs/evaluating-alphafolds-predicted-structures-using-confidence-scores/">Section 3</a>).</p>
+
+<p><img src="https://ftp.ebi.ac.uk/pub/training/2024/On-demand/Diagram.gif" alt="" /></p>
+
+<p>Figure 3. From Sequence to Structure. AlphaFold2 takes the protein sequence and, in minutes, predicts their 3D structure</p>
+
+<h2 id="alphafold-milestones"><strong>AlphaFold milestones</strong></h2>
+
+<p>In 2020, AlphaFold2 made headlines when it participated in, and won, the biennial Critical Assessment of Structure Prediction (<a href="https://predictioncenter.org/casp14/">CASP14</a>). This experiment challenges participants to predict the structures of non-trivial protein targets, which have been experimentally resolved but are not yet publicly available. Based on the exceptionally high scores achieved by AlphaFold2, CASP organisers proclaimed that the protein structure prediction problem “<a href="https://www.predictioncenter.org/casp14/doc/CASP14_press_release.html">has been largely solved for single proteins</a>”.</p>
+
+<p>AlphaFold2 is available as an open-source program. It can be installed locally on a powerful workstation or accessed as a web-service via <a href="https://colab.google/">Google Colab</a>. You can use the freely available notebooks <a href="https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb">AlphaFold</a> or <a href="https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=kOblAo-xetgx">ColabFold</a> (for details see section “<a href="https://www.ebi.ac.uk/training/online/courses/alphafold/accessing-and-predicting-protein-structures-with-alphafold/">Accessing and predicting protein structures with AlphaFold</a>“). There is also a freely available <a href="https://alphafold.ebi.ac.uk/">AlphaFold Protein Structure Database</a>, a database of pre-calculated structures of the protein monomers for almost all (~200 million) <a href="https://www.uniprot.org/help/about">UniProt</a> entries.</p>
+
+<p>Since AlphaFold2’s release in 2021, it has seen rapid and widespread adoption. The paper describing the method had received over 15,000 citations by December 2023. Similarly, as of winter  2023, the AlphaFold Protein Structure Database (AFDB) had had 1.65 million unique visitors from more than 180 countries, and the archive had been downloaded over 22,000 times.</p>
+
+<p><img src="https://lh7-us.googleusercontent.com/vpgdaTiu9z_0059LYPg16aBlMlLDFWuQnJ5xbLKh3VUzAuya8CxYkvY4vckxEmF0xiA6IEAD9Xmug8e1n6QdrULALU90T9HM43uJ0Ofl5QcaJgG7ghWjIvv_QNkoOsmAJC1nm7ncuQ51bPTgvtZfAyA" alt="" /></p>
+
+<p>Figure 4. The number of scientific papers and preprints citing the key AlphaFold2 paper (<a href="https://doi.org/10.1038/s41586-021-03819-2">Jumper et al., 2021</a>) every month since its publication in July 2021.</p>
+
+<hr />
+
+<h2 id="test-your-knowledge">Test your knowledge</h2>
+
+<p>Time to flex your AlphaFold muscles!</p>
+
+
+
+											</div>
+										</section>
+									</div>
+								</div>
+							</article>
+
+
+
+						</div>
+					</div>
+				</div>
+			</main>
+  <script src="https://assets.emblstatic.net/vf/v2.5.25/scripts/scripts.js"></script>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
