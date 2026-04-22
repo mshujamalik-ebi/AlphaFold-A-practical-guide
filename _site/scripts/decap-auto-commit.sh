@@ -68,6 +68,10 @@ while true; do
 
     git add -A
 
+    # Never include local secrets/private material in auto commits.
+    git reset -q -- .env .env.* 2>/dev/null || true
+    git reset -q -- '*.pem' '*.key' '*.p12' '*.pfx' 2>/dev/null || true
+
     if git diff --cached --quiet; then
       sleep 3
       continue
