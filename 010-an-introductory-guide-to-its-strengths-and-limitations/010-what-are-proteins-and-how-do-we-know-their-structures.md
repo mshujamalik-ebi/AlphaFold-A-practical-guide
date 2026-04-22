@@ -1,5 +1,5 @@
 ---
-title: What are proteins and how do we know their structured?
+title: What are proteins and how do we know their structuresa?
 layout: default
 ---
 
