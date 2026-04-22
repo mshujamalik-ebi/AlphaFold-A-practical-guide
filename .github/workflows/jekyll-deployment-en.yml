@@ -1,0 +1,128 @@
+name: Build and Deploy Jekyll Site for English
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ----------------------------
+      # Checkout all branches
+      # ----------------------------
+      - name: Checkout main (English)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: repo-main
+
+      # ----------------------------
+      # Prepare unified structure
+      # ----------------------------
+      - name: Prepare site folder
+        run: |
+          mkdir site
+          mkdir -p site/_data
+
+          # English
+          mkdir -p site/en
+          rsync -av --exclude="_data" --exclude=".git" repo-main/ site/en/
+          cp repo-main/_data/*.yml site/_data/
+
+    # ----------------------------
+      # Set up Node.js to generate navigation
+      # ----------------------------
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # ----------------------------
+      # Install dependencies
+      # ----------------------------
+      - name: Install Node dependencies
+        run: |
+          npm init -y
+          npm install js-yaml
+
+      # ----------------------------
+      # Generate navigation inside site folder
+      # ----------------------------
+      - name: Generate navigation
+        run: |
+          cd site
+          node ../repo-main/scripts/generateNavigation.js
+
+      # ----------------------------
+      # Copy config + layouts
+      # ----------------------------
+      - name: Copy config + layouts
+        run: |
+          cp repo-main/_config.yml site/
+          mkdir -p site/_layouts
+          cp -r repo-main/_layouts/* site/_layouts/ || true
+
+      # ----------------------------
+      # Add Gemfile for Jekyll
+      # ----------------------------
+      - name: Create Gemfile
+        run: |
+          cat <<EOF > site/Gemfile
+          source "https://rubygems.org"
+          gem "jekyll", "~> 4.3"
+          EOF
+
+      # ----------------------------
+      # Setup Ruby + Bundler
+      # ----------------------------
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+          working-directory: site
+
+      # ----------------------------
+      # Build Jekyll
+      # ----------------------------
+      - name: Build site
+        run: |
+          cd site
+          bundle install
+          bundle exec jekyll build --trace
+
+      # ----------------------------
+      # Debug build output
+      # ----------------------------
+      - name: Debug build output
+        run: |
+          ls -R site/_site | head -100
+
+      # ----------------------------
+      # Set language environment variable based on branch
+      # ----------------------------
+      - name: Set language
+        run: |
+          case "${GITHUB_REF##*/}" in
+            main) echo "LANG=en" >> $GITHUB_ENV ;;
+            spanish) echo "LANG=es" >> $GITHUB_ENV ;;
+            french) echo "LANG=fr" >> $GITHUB_ENV ;;
+            german) echo "LANG=de" >> $GITHUB_ENV ;;
+            portuguese) echo "LANG=pt" >> $GITHUB_ENV ;;
+          esac
+
+      # ----------------------------
+      # Deploy to gh-pages
+      # ----------------------------
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/_site
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

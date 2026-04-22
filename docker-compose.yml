@@ -1,0 +1,68 @@
+services:
+  jekyll:
+    image: ruby:3.2
+    container_name: alphafold-jekyll
+    working_dir: /srv/jekyll
+    ports:
+      - "4001:4000"
+    volumes:
+      - .:/srv/jekyll
+      - bundle_cache:/usr/local/bundle
+    environment:
+      JEKYLL_ENV: development
+    command: >
+      bash -lc "
+        gem install bundler -v 2.5.22 -N &&
+        bundle install &&
+        bundle exec jekyll serve --host 0.0.0.0 --port 4000 --force_polling --livereload
+      "
+    restart: unless-stopped
+
+  decap:
+    image: node:20-alpine
+    container_name: alphafold-decap
+    working_dir: /workspace
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/workspace
+      - npm_cache:/root/.npm
+    command: sh -lc "npx --yes decap-server"
+    depends_on:
+      - jekyll
+    restart: unless-stopped
+
+  auto-commit:
+    image: ubuntu:22.04
+    container_name: alphafold-auto-commit
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - git_cache:/root/.git
+    environment:
+      GIT_AUTHOR_NAME: Decap CMS
+      GIT_AUTHOR_EMAIL: cms@alphafold.local
+      GIT_COMMITTER_NAME: Decap CMS
+      GIT_COMMITTER_EMAIL: cms@alphafold.local
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      PROTECTED_BRANCHES: ${PROTECTED_BRANCHES:-main master}
+    command: >
+      bash -lc "
+        apt-get update &&
+        apt-get install -y git curl &&
+        chmod +x ./scripts/decap-auto-commit.sh &&
+        ./scripts/decap-auto-commit.sh
+      "
+    depends_on:
+      - jekyll
+      - decap
+    restart: unless-stopped
+
+volumes:
+  bundle_cache:
+  npm_cache:
+  git_cache:
+
+networks:
+  default:
+    name: alphafold-network
