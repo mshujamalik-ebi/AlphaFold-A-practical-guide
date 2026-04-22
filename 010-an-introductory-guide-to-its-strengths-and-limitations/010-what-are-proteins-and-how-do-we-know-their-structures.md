@@ -6,8 +6,6 @@ layout: default
 
 
 
-## **What is a protein?**
-
 Each protein molecule consists of one or more chains, made by linking small molecules called amino acids. The amino acid residues are arranged in a specific sequence along each chain. These chains are folded into a distinctive 3D shape, determined by interactions between the amino acids.
 
 There is a strong relationship between protein structure and protein function. The 3D shape of the protein determines the actions it can perform.
