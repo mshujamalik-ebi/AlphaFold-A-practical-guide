@@ -2,10 +2,9 @@
 title: What are proteins and how do we know their structure?
 layout: default
 ---
-
 # What are proteins and how do we know their structures?
 
-**Proteins are large molecules that are essential to life as we know it. If you examine any biological process, you will find proteins involved and often playing critical roles. The structures of proteins are strongly related to their functions, but determining their 3D structures is very difficult.**
+
 
 ## **What is a protein?**
 
@@ -14,17 +13,6 @@ Each protein molecule consists of one or more chains, made by linking small mole
 There is a strong relationship between protein structure and protein function. The 3D shape of the protein determines the actions it can perform.
 
 Figuring out protein structure is like opening a black box. Revealing the 3D structure enables scientists to determine how exactly proteins perform their duties.
-
-
-
-
-
-
-
-
-
-
-
 
 ##### Salmonella alpha-2-macroglobulin (PDB ID: 4U48)
 
@@ -51,7 +39,6 @@ For several decades, it has been possible to determine protein structures at ato
 However, despite the progress made in experimental techniques, determining protein structure experimentally is inherently time and labour-consuming, and involves many troubleshooting steps. As a result, the number of known protein sequences has always been greater than the number of available protein structures. In January 2024, the number of experimental structures available in the PDB was slightly over 215,000, in comparison to the staggering ~250 million protein sequences available through UniProt.
 
 ![](https://ftp.ebi.ac.uk/pub/training/2024/On-demand/Proteins.gif)
-
 
 Figure 2. Unlocking protein structures. Three experimental methods used
 for determining protein structure: X-ray, NMR and cryo-EM. AlphaFold2, a powerful AI-driven method, has
